@@ -2,9 +2,11 @@ import socket
 import AlphaBot
 import time
 import sqlite3
+# importazione del modulo Flask e di alcune sue funzioni
 from flask import Flask, render_template, request
+# creazione dell'istanza dell'applicazione Flask
 app = Flask(__name__)
-
+# definizione della rotta '/' per la gestione delle richieste GET e POST
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
