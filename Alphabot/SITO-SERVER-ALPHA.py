@@ -2,11 +2,15 @@ import socket
 import AlphaBot
 import time
 import sqlite3
+# importazione del modulo Flask e di alcune sue funzioni
 from flask import Flask, render_template, request
-#ok = True
+# creazione dell'istanza dell'applicazione Flask
+app = Flask(__name__)
+
 alpha = AlphaBot.AlphaBot()
 dizio = {"s": alpha.stop,"f":alpha.forward,"b":alpha.backward,"l":alpha.left,"r":alpha.right}
-app = Flask(__name__)
+
+
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
