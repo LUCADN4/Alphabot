@@ -9,6 +9,7 @@ app = Flask(__name__)
 # definizione della rotta '/' per la gestione delle richieste GET e POST
 @app.route("/", methods=['GET', 'POST'])
 def index():
+        # verifica se la richiesta è di tipo POST
     if request.method == 'POST':
         if request.form.get('action1') == 'AVANTI':
             alpha.forward(50)
