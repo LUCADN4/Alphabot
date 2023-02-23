@@ -10,7 +10,7 @@ app = Flask(__name__)
 alpha = AlphaBot.AlphaBot()
 dizio = {"s": alpha.stop,"f":alpha.forward,"b":alpha.backward,"l":alpha.left,"r":alpha.right}
 
-
+# definizione della rotta '/' per la gestione delle richieste GET e POST
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
